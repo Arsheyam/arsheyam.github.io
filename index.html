@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arsheyam</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --main: #1F3A5F;
+    --text: #1A1A1A;
+    --bg: #FAFAF8;
+    --accent: #D97706;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'IBM Plex Sans', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    text-align: center;
+  }
+  .logo {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 28px;
+  }
+  h1 {
+    font-weight: 700;
+    font-size: clamp(28px, 5vw, 40px);
+    color: var(--main);
+    margin-bottom: 12px;
+  }
+  p.claim {
+    font-size: clamp(15px, 2.5vw, 18px);
+    max-width: 560px;
+    line-height: 1.5;
+    color: var(--text);
+    margin-bottom: 28px;
+  }
+  .status {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--accent);
+    letter-spacing: 0.02em;
+  }
+</style>
+</head>
+<body>
+  <img src="favicon.png" alt="" class="logo">
+  <h1>Arsheyam</h1>
+  <p class="claim">A rule sounding reasonable and a rule surviving a real evaluation are different claims &mdash; I check which one I have.</p>
+  <div class="status">// site under construction &mdash; case studies live soon</div>
+</body>
+</html>
