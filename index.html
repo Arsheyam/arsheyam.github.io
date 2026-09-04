@@ -67,4 +67,53 @@
   .contact input, .contact textarea {
     width: 100%;
     padding: 10px;
-    border: 1px solid
+    border: 1px solid var(--main);
+    border-radius: 4px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    background: #fff;
+    color: var(--text);
+  }
+  .contact textarea { min-height: 90px; resize: vertical; }
+  .contact button {
+    margin-top: 16px;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-family: 'IBM Plex Sans', sans-serif;
+    cursor: pointer;
+  }
+  .contact button:hover { opacity: 0.9; }
+  .status {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--accent);
+    letter-spacing: 0.02em;
+  }
+</style>
+</head>
+<body>
+  <img src="favicon.png" alt="" class="logo">
+  <h1>Arsheyam</h1>
+  <p class="claim">A rule sounding reasonable and a rule surviving a real evaluation are different claims &mdash; I check which one I have.</p>
+  <div class="links">
+    <a href="https://www.linkedin.com/in/muhammad-arsheyam-khattak-ba05a8377" target="_blank">LinkedIn</a>
+    <a href="https://github.com/Arsheyam" target="_blank">GitHub</a>
+    <a href="./assets/Arsheyam_Resume.pdf" target="_blank">CV</a>
+    <a href="https://calendly.com/arsheyam-ktk/intro-session" target="_blank">Book a call</a>
+  </div>
+
+  <form class="contact" action="https://formspree.io/f/xljelodv" method="POST">
+    <label for="email">Your email</label>
+    <input type="email" id="email" name="email" required>
+    <label for="message">Message</label>
+    <textarea id="message" name="message" required></textarea>
+    <button type="submit">Send</button>
+  </form>
+
+  <div class="status">// site under construction &mdash; case studies live soon</div>
+</body>
+</html>
