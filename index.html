@@ -13,6 +13,7 @@
     --text: #1A1A1A;
     --bg: #FAFAF8;
     --accent: #D97706;
+    --accent-dark: #B45309;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
@@ -36,20 +37,28 @@
   }
   p.claim {
     font-size: clamp(15px, 2.5vw, 18px);
+    line-height: 1.6;
     max-width: 560px;
-    line-height: 1.5;
     margin-bottom: 28px;
   }
-  .links { margin-bottom: 40px; }
+  .links {
+    margin-bottom: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
   .links a {
     color: var(--main);
     text-decoration: none;
     font-weight: 700;
-    margin: 0 12px;
-    border-bottom: 2px solid var(--accent);
-    padding-bottom: 2px;
+    padding: 8px 4px;
+    border-bottom: 2px solid var(--accent-dark);
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
   }
-  .links a:hover { color: var(--accent); }
+  .links a:hover { color: var(--accent-dark); }
   .contact {
     width: 100%;
     max-width: 420px;
@@ -59,30 +68,32 @@
   .contact label {
     display: block;
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 12px;
+    font-size: 13px;
     color: var(--main);
     margin-bottom: 4px;
     margin-top: 14px;
   }
   .contact input, .contact textarea {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     border: 1px solid var(--main);
     border-radius: 4px;
     font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     background: #fff;
     color: var(--text);
   }
-  .contact textarea { min-height: 90px; resize: vertical; }
+  .contact textarea { min-height: 100px; resize: vertical; line-height: 1.5; }
   .contact button {
     margin-top: 16px;
-    background: var(--accent);
+    background: var(--accent-dark);
     color: #fff;
     border: none;
-    padding: 10px 24px;
+    padding: 14px 28px;
+    min-height: 44px;
     border-radius: 4px;
     font-weight: 700;
+    font-size: 16px;
     font-family: 'IBM Plex Sans', sans-serif;
     cursor: pointer;
   }
@@ -90,13 +101,13 @@
   .status {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 13px;
-    color: var(--accent);
+    color: #92400E;
     letter-spacing: 0.02em;
   }
 </style>
 </head>
 <body>
-  <img src="favicon.png" alt="" class="logo">
+  <img src="favicon.png" alt="Arsheyam logo" class="logo">
   <h1>Arsheyam</h1>
   <p class="claim">A rule sounding reasonable and a rule surviving a real evaluation are different claims &mdash; I check which one I have.</p>
   <div class="links">
