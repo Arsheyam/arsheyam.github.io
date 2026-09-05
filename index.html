@@ -17,6 +17,16 @@
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4M7WK4MNKV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4M7WK4MNKV');
+</script>
+
 <style>
   :root {
     --main: #1F3A5F;
@@ -195,8 +205,14 @@
     text-align: center;
     padding: 28px 24px 40px;
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 13px;
+    font-size: 12px;
     color: #92400E;
+  }
+  footer .badge-pending {
+    display: block;
+    margin-top: 10px;
+    color: #78716C;
+    font-size: 11px;
   }
 </style>
 </head>
@@ -260,7 +276,10 @@
   </div>
 </section>
 
-<footer>// site under construction &mdash; full case studies live soon</footer>
+<footer>
+  // site under construction &mdash; full case studies live soon
+  <span class="badge-pending">FlyRank AI Internship graduate badge: pending certificate issuance (expected early September 2026) &mdash; will be added here once received.</span>
+</footer>
 
 </body>
 </html>
