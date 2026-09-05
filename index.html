@@ -39,7 +39,38 @@
     font-size: clamp(15px, 2.5vw, 18px);
     line-height: 1.6;
     max-width: 560px;
-    margin-bottom: 28px;
+    margin-bottom: 32px;
+  }
+  .work {
+    width: 100%;
+    max-width: 560px;
+    margin-bottom: 36px;
+    text-align: left;
+  }
+  .work h2 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--main);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 14px;
+  }
+  .work-item {
+    border-left: 3px solid var(--accent-dark);
+    padding: 4px 0 4px 14px;
+    margin-bottom: 16px;
+  }
+  .work-item a {
+    color: var(--main);
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .work-item a:hover { color: var(--accent-dark); }
+  .work-item p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-top: 4px;
+    color: var(--text);
   }
   .links {
     margin-bottom: 40px;
@@ -110,6 +141,19 @@
   <img src="favicon.png" alt="Arsheyam logo" class="logo">
   <h1>Arsheyam</h1>
   <p class="claim">A rule sounding reasonable and a rule surviving a real evaluation are different claims &mdash; I check which one I have.</p>
+
+  <div class="work">
+    <h2>What I'm working on</h2>
+    <div class="work-item">
+      <a href="https://github.com/Arsheyam/FlyRank_Starter" target="_blank">FlyRank Ranking Signal Analysis &rarr;</a>
+      <p>Tested a hand-built content-decline heuristic against three supervised classifiers on 76,837 real production pages, with a client-grouped holdout split and a leakage audit. The heuristic lost badly &mdash; the point was proving that, not assuming it.</p>
+    </div>
+    <div class="work-item">
+      <a href="https://crypto-eight-beta.vercel.app/" target="_blank">Crypto Careers &rarr;</a>
+      <p>A live full-stack crypto market dashboard, React front end and Python backend, pulling real-time prices and news.</p>
+    </div>
+  </div>
+
   <div class="links">
     <a href="https://www.linkedin.com/in/muhammad-arsheyam-khattak-ba05a8377" target="_blank">LinkedIn</a>
     <a href="https://github.com/Arsheyam" target="_blank">GitHub</a>
