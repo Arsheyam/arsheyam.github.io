@@ -14,97 +14,162 @@
     --bg: #FAFAF8;
     --accent: #D97706;
     --accent-dark: #B45309;
+    --card-bg: #ffffff;
+    --border: #E4E1D8;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
   body {
     background: var(--bg);
     color: var(--text);
     font-family: 'IBM Plex Sans', sans-serif;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 24px;
-    text-align: center;
-  }
-  .logo { width: 64px; height: 64px; margin-bottom: 28px; }
-  h1 {
-    font-weight: 700;
-    font-size: clamp(28px, 5vw, 40px);
-    color: var(--main);
-    margin-bottom: 12px;
-  }
-  p.claim {
-    font-size: clamp(15px, 2.5vw, 18px);
     line-height: 1.6;
-    max-width: 560px;
-    margin-bottom: 32px;
   }
-  .work {
-    width: 100%;
-    max-width: 560px;
-    margin-bottom: 36px;
-    text-align: left;
+
+  /* Nav */
+  nav {
+    position: sticky;
+    top: 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 24px;
+    z-index: 10;
   }
-  .work h2 {
+  nav .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    color: var(--main);
+    text-decoration: none;
+  }
+  nav .brand img { width: 28px; height: 28px; }
+  nav .nav-links { display: flex; gap: 20px; }
+  nav .nav-links a {
+    color: var(--main);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 6px 4px;
+  }
+  nav .nav-links a:hover { color: var(--accent-dark); }
+
+  section { padding: 56px 24px; max-width: 880px; margin: 0 auto; }
+
+  /* Hero */
+  .hero { text-align: center; padding-top: 64px; }
+  .hero h1 {
+    font-weight: 700;
+    font-size: clamp(30px, 5vw, 44px);
+    color: var(--main);
+    margin-bottom: 16px;
+  }
+  .hero .claim {
+    font-size: clamp(16px, 2.5vw, 19px);
+    max-width: 600px;
+    margin: 0 auto 28px;
+  }
+  .hero .cta {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    background: var(--accent-dark);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 12px 28px;
+    border-radius: 4px;
+  }
+  .hero .cta:hover { opacity: 0.9; }
+
+  /* Section headings */
+  h2.section-title {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 13px;
     color: var(--main);
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 14px;
+    letter-spacing: 0.06em;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 12px;
   }
-  .work-item {
-    border-left: 3px solid var(--accent-dark);
-    padding: 4px 0 4px 14px;
-    margin-bottom: 16px;
+
+  /* Work grid */
+  .work-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
   }
-  .work-item a {
-    color: var(--main);
-    font-weight: 700;
-    text-decoration: none;
-  }
-  .work-item a:hover { color: var(--accent-dark); }
-  .work-item p {
-    font-size: 14px;
-    line-height: 1.5;
-    margin-top: 4px;
-    color: var(--text);
-  }
-  .links {
-    margin-bottom: 40px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
-  }
-  .links a {
-    color: var(--main);
-    text-decoration: none;
-    font-weight: 700;
-    padding: 8px 4px;
-    border-bottom: 2px solid var(--accent-dark);
-    min-height: 44px;
-    display: inline-flex;
-    align-items: center;
-  }
-  .links a:hover { color: var(--accent-dark); }
-  .contact {
-    width: 100%;
-    max-width: 420px;
+  .work-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--accent-dark);
+    border-radius: 6px;
+    padding: 20px;
     text-align: left;
-    margin-bottom: 32px;
   }
-  .contact label {
+  .work-card .tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--accent-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+    display: block;
+  }
+  .work-card a.title {
+    color: var(--main);
+    font-weight: 700;
+    font-size: 17px;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 8px;
+  }
+  .work-card a.title:hover { color: var(--accent-dark); }
+  .work-card p { font-size: 14px; }
+
+  /* About */
+  .about p { max-width: 640px; margin-bottom: 16px; }
+  .about ul { list-style: none; margin-top: 16px; }
+  .about li {
+    font-size: 14px;
+    padding: 6px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .about li strong { color: var(--main); }
+
+  /* Contact */
+  .contact-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  @media (max-width: 640px) {
+    .contact-wrap { grid-template-columns: 1fr; }
+  }
+  .quick-links { display: flex; flex-direction: column; gap: 10px; }
+  .quick-links a {
+    color: var(--main);
+    text-decoration: none;
+    font-weight: 700;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+  }
+  .quick-links a:hover { color: var(--accent-dark); }
+  .contact form label {
     display: block;
     font-family: 'IBM Plex Mono', monospace;
     font-size: 13px;
     color: var(--main);
     margin-bottom: 4px;
-    margin-top: 14px;
+    margin-top: 12px;
   }
-  .contact input, .contact textarea {
+  .contact form input, .contact form textarea {
     width: 100%;
     padding: 12px;
     border: 1px solid var(--main);
@@ -114,8 +179,8 @@
     background: #fff;
     color: var(--text);
   }
-  .contact textarea { min-height: 100px; resize: vertical; line-height: 1.5; }
-  .contact button {
+  .contact form textarea { min-height: 90px; resize: vertical; }
+  .contact form button {
     margin-top: 16px;
     background: var(--accent-dark);
     color: #fff;
@@ -125,50 +190,84 @@
     border-radius: 4px;
     font-weight: 700;
     font-size: 16px;
-    font-family: 'IBM Plex Sans', sans-serif;
     cursor: pointer;
   }
-  .contact button:hover { opacity: 0.9; }
-  .status {
+  .contact form button:hover { opacity: 0.9; }
+
+  footer {
+    text-align: center;
+    padding: 28px 24px 40px;
     font-family: 'IBM Plex Mono', monospace;
     font-size: 13px;
     color: #92400E;
-    letter-spacing: 0.02em;
   }
 </style>
 </head>
 <body>
-  <img src="favicon.png" alt="Arsheyam logo" class="logo">
+
+<nav>
+  <a href="#top" class="brand"><img src="favicon.png" alt="Arsheyam logo">Arsheyam</a>
+  <div class="nav-links">
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<section class="hero" id="top">
   <h1>Arsheyam</h1>
   <p class="claim">A rule sounding reasonable and a rule surviving a real evaluation are different claims &mdash; I check which one I have.</p>
+  <a href="#contact" class="cta">Get in touch</a>
+</section>
 
-  <div class="work">
-    <h2>What I'm working on</h2>
-    <div class="work-item">
-      <a href="https://github.com/Arsheyam/FlyRank_Starter" target="_blank">FlyRank Ranking Signal Analysis &rarr;</a>
+<section id="work">
+  <h2 class="section-title">What I'm working on</h2>
+  <div class="work-grid">
+    <div class="work-card">
+      <span class="tag">Capstone</span>
+      <a class="title" href="https://github.com/Arsheyam/FlyRank_Starter" target="_blank">FlyRank Ranking Signal Analysis &rarr;</a>
       <p>Tested a hand-built content-decline heuristic against three supervised classifiers on 76,837 real production pages, with a client-grouped holdout split and a leakage audit. The heuristic lost badly &mdash; the point was proving that, not assuming it.</p>
     </div>
-    <div class="work-item">
-      <a href="https://crypto-eight-beta.vercel.app/" target="_blank">Crypto Careers &rarr;</a>
-      <p>A live full-stack crypto market dashboard, React front end and Python backend, pulling real-time prices and news.</p>
+    <div class="work-card">
+      <span class="tag">Live app</span>
+      <a class="title" href="https://crypto-eight-beta.vercel.app/" target="_blank">Crypto Careers &rarr;</a>
+      <p>A live full-stack crypto market dashboard &mdash; React front end, Python backend &mdash; pulling real-time prices and news.</p>
     </div>
   </div>
+</section>
 
-  <div class="links">
-    <a href="https://www.linkedin.com/in/muhammad-arsheyam-khattak-ba05a8377" target="_blank">LinkedIn</a>
-    <a href="https://github.com/Arsheyam" target="_blank">GitHub</a>
-    <a href="./assets/Arsheyam_Resume.pdf" target="_blank">CV</a>
-    <a href="https://calendly.com/arsheyam-ktk/intro-session" target="_blank">Book a call</a>
+<section id="about" class="about">
+  <h2 class="section-title">About</h2>
+  <p>I'm an undergraduate in the Bachelor of Artificial Intelligence program at COMSATS University Islamabad. I build things across software development, automation, and machine learning &mdash; leaning toward ML and data science as the direction I want a career in.</p>
+  <ul>
+    <li><strong>Program:</strong> BS Artificial Intelligence, COMSATS University Islamabad</li>
+    <li><strong>Focus:</strong> Machine learning and data science, built and evaluated rigorously &mdash; not just demoed</li>
+    <li><strong>Looking for:</strong> An internship for hands-on ML experience at a structured, process-driven team</li>
+  </ul>
+</section>
+
+<section id="contact">
+  <h2 class="section-title">Get in touch</h2>
+  <div class="contact-wrap">
+    <div class="quick-links">
+      <a href="https://www.linkedin.com/in/muhammad-arsheyam-khattak-ba05a8377" target="_blank">LinkedIn &rarr;</a>
+      <a href="https://github.com/Arsheyam" target="_blank">GitHub &rarr;</a>
+      <a href="./assets/Arsheyam_Resume.pdf" target="_blank">CV &rarr;</a>
+      <a href="https://calendly.com/arsheyam-ktk/intro-session" target="_blank">Book a call &rarr;</a>
+    </div>
+    <div class="contact">
+      <form action="https://formspree.io/f/xljelodv" method="POST">
+        <label for="email">Your email</label>
+        <input type="email" id="email" name="email" required>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
   </div>
+</section>
 
-  <form class="contact" action="https://formspree.io/f/xljelodv" method="POST">
-    <label for="email">Your email</label>
-    <input type="email" id="email" name="email" required>
-    <label for="message">Message</label>
-    <textarea id="message" name="message" required></textarea>
-    <button type="submit">Send</button>
-  </form>
+<footer>// site under construction &mdash; full case studies live soon</footer>
 
-  <div class="status">// site under construction &mdash; case studies live soon</div>
 </body>
 </html>
