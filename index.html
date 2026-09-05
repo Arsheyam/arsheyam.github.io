@@ -3,7 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Arsheyam</title>
+<title>Muhammad Arsheyam Khattak — ML Engineer Portfolio</title>
+<meta name="description" content="Machine Learning Intern at FlyRank AI and BS Artificial Intelligence student at COMSATS University. Portfolio of rigorously evaluated ML work, built and tested against real data, not just demoed.">
+<link rel="canonical" href="https://arsheyam-portfolio.netlify.app/">
+<meta property="og:title" content="Muhammad Arsheyam Khattak — ML Engineer Portfolio">
+<meta property="og:description" content="Machine Learning Intern at FlyRank AI. ML work built and evaluated rigorously — not just demoed.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://arsheyam-portfolio.netlify.app/">
+<meta property="og:image" content="https://arsheyam-portfolio.netlify.app/favicon.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Muhammad Arsheyam Khattak — ML Engineer Portfolio">
+<meta name="twitter:description" content="Machine Learning Intern at FlyRank AI. ML work built and evaluated rigorously — not just demoed.">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
@@ -25,8 +35,6 @@
     font-family: 'IBM Plex Sans', sans-serif;
     line-height: 1.6;
   }
-
-  /* Nav */
   nav {
     position: sticky;
     top: 0;
@@ -56,10 +64,7 @@
     padding: 6px 4px;
   }
   nav .nav-links a:hover { color: var(--accent-dark); }
-
   section { padding: 56px 24px; max-width: 880px; margin: 0 auto; }
-
-  /* Hero */
   .hero { text-align: center; padding-top: 64px; }
   .hero h1 {
     font-weight: 700;
@@ -84,8 +89,6 @@
     border-radius: 4px;
   }
   .hero .cta:hover { opacity: 0.9; }
-
-  /* Section headings */
   h2.section-title {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 13px;
@@ -96,8 +99,6 @@
     border-bottom: 1px solid var(--border);
     padding-bottom: 12px;
   }
-
-  /* Work grid */
   .work-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -130,8 +131,6 @@
   }
   .work-card a.title:hover { color: var(--accent-dark); }
   .work-card p { font-size: 14px; }
-
-  /* About */
   .about p { max-width: 640px; margin-bottom: 16px; }
   .about ul { list-style: none; margin-top: 16px; }
   .about li {
@@ -140,8 +139,6 @@
     border-bottom: 1px solid var(--border);
   }
   .about li strong { color: var(--main); }
-
-  /* Contact */
   .contact-wrap {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -193,7 +190,7 @@
     cursor: pointer;
   }
   .contact form button:hover { opacity: 0.9; }
-
+  .contact form button:disabled { opacity: 0.6; cursor: not-allowed; }
   footer {
     text-align: center;
     padding: 28px 24px 40px;
@@ -224,11 +221,6 @@
   <h2 class="section-title">What I'm working on</h2>
   <div class="work-grid">
     <div class="work-card">
-      <span class="tag">Capstone</span>
-      <a class="title" href="https://github.com/Arsheyam/FlyRank_Starter" target="_blank">FlyRank Ranking Signal Analysis &rarr;</a>
-      <p>Tested a hand-built content-decline heuristic against three supervised classifiers on 76,837 real production pages, with a client-grouped holdout split and a leakage audit. The heuristic lost badly &mdash; the point was proving that, not assuming it.</p>
-    </div>
-    <div class="work-card">
       <span class="tag">FlyRank AI &mdash; ML Internship</span>
       <a class="title" href="https://github.com/Arsheyam/FlyRank_Starter" target="_blank">Ranking Signal Analysis &rarr;</a>
       <p>76,837 production pages across 34 clients. Tested a hand-built SEO heuristic against Logistic Regression, Decision Tree, and Random Forest models with a client-grouped validation split. Decision Tree hit 84% Precision@50 (~1.8&times; lift over baseline) &mdash; the heuristic didn't beat it at 38%.</p>
@@ -257,7 +249,7 @@
       <a href="https://calendly.com/arsheyam-ktk/intro-session" target="_blank">Book a call &rarr;</a>
     </div>
     <div class="contact">
-      <form action="https://formspree.io/f/xljelodv" method="POST">
+      <form action="https://formspree.io/f/xljelodv" method="POST" onsubmit="this.querySelector('button').disabled=true; this.querySelector('button').textContent='Sending...';">
         <label for="email">Your email</label>
         <input type="email" id="email" name="email" required>
         <label for="message">Message</label>
